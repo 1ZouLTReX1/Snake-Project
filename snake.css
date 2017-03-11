@@ -21,7 +21,7 @@ p {
 
 .text {
 	position: absolute;
-	top: 880px; 
+	top: 870px; 
 	right: 90%;
 	font-size:24px;
 	-webkit-text-stroke: 1px black;
@@ -37,8 +37,8 @@ input {
   outline:0;
 	display: block;
 	position: absolute;
-	top: 850px; 
-	right: 91.5%;
+	top: 842px; 
+	right: 91.45%;
 	-moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;

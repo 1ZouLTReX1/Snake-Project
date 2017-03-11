@@ -114,10 +114,17 @@ function draw() {
 		fontSize = 62;
 	}
 	if (frameCount > anotherfps+2.5 && SetTimeInterval == true) {
+		// change the font back to its normal size.
 		fontSize = 46;
+		// w8 some time before putting another food.
 		if (frameCount > anotherfps+10 && SetTimeInterval == true) {
-			// w8 some time before putting another food.
-			fps++;
+			if (fps <= 40) {
+				if (fps >= 30) {
+					fps += 0.5;
+				} else {
+					fps++
+				}	
+			}
 			food = pickLocation();
 			SetTimeInterval = false;
   	}
