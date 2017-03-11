@@ -142,12 +142,12 @@ function keyPressed() {
   }
 	
 	if (keyCode === 49) {
-		if ( volAmount <= 0.45) {
-			volAmount += 0.05
+		if ( volAmount <= 0.05) {
+			volAmount -= 0.05
 		}
 	} else if (keyCode === 50) {
-		if (volAmount >= 0.05) {
-			volAmount -= 0.05
+		if (volAmount >= 0.45) {
+			volAmount += 0.05
 		}
   }
 }
