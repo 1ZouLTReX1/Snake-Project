@@ -1,7 +1,7 @@
 function Snake() {
   this.x = 0;
   this.y = 0;
-  this.xspeed = 1;
+  this.xspeed = 0;
   this.yspeed = 0;
   this.total = 0;
   this.tail = [];
@@ -17,7 +17,7 @@ function Snake() {
       return false;
     }
   }
-
+  
   this.dir = function(x, y) {
     this.xspeed = x;
     this.yspeed = y;

@@ -147,14 +147,14 @@ function keyPressed() {
   } else if (keyCode === RIGHT_ARROW && s.xspeed != -1){
     s.dir(1, 0);
   }
-	
-	if (keyCode === 49) {
-		if ( volAmount >= 0.05) {
-			volAmount -= 0.05
-		}
-	} else if (keyCode === 50) {
-		if (volAmount <= 0.45) {
-			volAmount += 0.05
-		}
+  if (keyCode === 49) {
+    if ( volAmount >= 0.05) {
+      volAmount -= 0.05
+    }
+  } else if (keyCode === 50) {
+    if (volAmount <= 0.45) {
+      volAmount += 0.05
+    }
   }
 }
+
