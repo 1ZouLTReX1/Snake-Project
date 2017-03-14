@@ -55,7 +55,7 @@ var volAmount = 0;
 function setup() {
   createCanvas((innerWidth - 38) - ((innerWidth - 38)%20),
 							 (innerHeight/1.25) - ((innerHeight/1.25)%20));
-	song = loadSound("arcde.mp3", loaded);
+	song = loadSound("Snake.wav", loaded);
 	//slider
 	volSlider = createSlider(0,0.5,0,0.01);
 	//volSlider.position(8 + 129/2,innerHeight - 53);
