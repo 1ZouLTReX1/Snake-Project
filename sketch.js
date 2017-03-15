@@ -31,7 +31,7 @@ best_score = getCookie('best');
 var s;
 // The Scale of the grid.
 var scl = 20;
-var food = {
+var apple = {
   x: 0,
   y: 0,
 };
@@ -74,12 +74,29 @@ function loaded() {
 	song.loop();
 }
 
+function drawApple() {
+	fill(255, 0, 100);
+  rect(apple.x, apple.y, scl, scl);
+}
+
 function reset() {
   s = new Snake();
   var location = pickLocation();
   s.x = location.x;
   s.y = location.y;
-  food = pickLocation();
+	do {
+		var boolean1 = false;
+		apple = pickLocation();
+		for(var i = 0 ; i < s.tail.length; i++) {
+			var pos = s.tail[i];
+			if (apple.x == pos.x &&
+				 apple.y == pos.y) {
+				boolean1 = true;
+				break;
+			}
+		}
+	}
+	while (boolean1);
 	song.stop();
 	if(song.isLoaded()) {
 		song.loop();
@@ -107,16 +124,16 @@ function draw() {
   score.html("<p style='font-size: "+ fontSize +"px'>Score: " + s.total + "</p>"); 
   best.html("Best: " + best_score);
 	
-  if (s.eat(food)) {
+  if (s.eat(apple)) {
 		anotherfps = frameCount;
 		SetTimeInterval = true;
-		food.x = width + scl;
+		apple.x = width + scl;
 		fontSize = 62;
 	}
-	if (frameCount > anotherfps+2.5 && SetTimeInterval == true) {
+	if (frameCount > anotherfps+2 && SetTimeInterval == true) {
 		// change the font back to its normal size.
 		fontSize = 46;
-		// w8 some time before putting another food.
+		// w8 some time before putting another apple.
 		if (frameCount > anotherfps+10 && SetTimeInterval == true) {
 			if (fps <= 40) {
 				if (fps >= 30) {
@@ -125,16 +142,27 @@ function draw() {
 					fps++
 				}	
 			}
-			food = pickLocation();
+			do {
+				var boolean1 = false;
+				apple = pickLocation();
+				for(var i = 0 ; i < s.tail.length; i++) {
+					var pos = s.tail[i];
+					if (apple.x == pos.x &&
+				 		apple.y == pos.y) {
+						boolean1 = true;
+						break;
+					}
+				}
+			}
+			while (boolean1);
 			SetTimeInterval = false;
   	}
 	}
   s.death();
   s.update();
   s.show();
-  //food  
-  fill(255,0,100);
-  rect(food.x, food.y, scl, scl);
+  //apple  
+  drawApple("red");
 }
 
 function keyPressed() {
