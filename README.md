@@ -2,7 +2,7 @@
 A snake based game powered by P5.js.
 
 If you would like to play it cilck here
-https://github.com/1ZouLTReX1/Snake-Project/blob/master/index.html
+  https://github.com/1ZouLTReX1/Snake-Project/blob/master/index.html
 
 ## Gameplay
 * You start as the snake's head and grow by eating apples.
